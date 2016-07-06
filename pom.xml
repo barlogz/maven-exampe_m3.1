@@ -39,6 +39,35 @@
                 </configuration>
             </plugin>
 
+            <!-- to run jar file in terminal - mvn exec:exec-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <configuration>
+                    <workingDirectory>target</workingDirectory>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-jar</argument>
+                        <argument>maven-example_m3.1-1.0-SNAPSHOT.jar</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+
+            <!-- to run jar file in terminal - mvn exec:java-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <configuration>
+                    <workingDirectory>target</workingDirectory>
+                    <mainClass>Runner</mainClass>
+                    <arguments>
+                        <argument>-jar</argument>
+                        <argument>maven-example_m3.1-1.0-SNAPSHOT.jar</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
